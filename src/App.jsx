@@ -2,8 +2,8 @@ import "./App.css";
 import Navbar from "./components/Navbar";
 import { Outlet } from "react-router";
 import { useState } from "react";
-import setQuantity from "./helperFunctions/increaseQuantity";
-import { useOutletContext } from "react-router";
+import setQuantity from "./helperFunctions/setQuantity";
+import useProducts from "./hooks/useProducts";
 
 const fakeCart = [
   {
@@ -21,6 +21,8 @@ const fakeCart = [
     quantity: 3,
   },
 ];
+
+const { products, error, loading } = useProducts();
 
 function App() {
   const [cart, setCart] = useState(fakeCart);

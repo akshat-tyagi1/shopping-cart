@@ -1,3 +1,5 @@
-function Cart() {}
+function Cart({ cart }) {
+    
+}
 
 export default Cart;

@@ -4,7 +4,7 @@ import styles from "./Navbar.module.css";
 const getLinkClass = ({ isActive }) =>
   `${styles.navLink} ${isActive ? styles.active : ""}`;
 
-function Navbar({ cartCount }) {
+function Navbar({ itemCount }) {
   return (
     <nav className={styles.navbar}>
       <Link to="/" className={styles.brand}>
@@ -18,7 +18,7 @@ function Navbar({ cartCount }) {
           Shop
         </NavLink>
         <NavLink to="/cart" className={getLinkClass}>
-          Cart ({cartCount})
+          Cart ({itemCount})
         </NavLink>
       </div>
     </nav>

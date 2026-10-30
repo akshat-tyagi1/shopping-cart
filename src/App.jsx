@@ -22,10 +22,9 @@ const fakeCart = [
   },
 ];
 
-const { products, error, loading } = useProducts();
-
 function App() {
   const [cart, setCart] = useState(fakeCart);
+  const { products, error, loading } = useProducts();
 
   const handleSetQuantity = (product, quantity) => {
     setCart((currentCart) => setQuantity(currentCart, product, quantity));

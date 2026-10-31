@@ -1,4 +1,3 @@
-import { describe, expect } from "vitest";
 import setQuantity from "./setQuantity";
 
 describe("setQuantity", () => {
@@ -7,7 +6,7 @@ describe("setQuantity", () => {
     { id: 2, title: "T-Shirt", price: 22.3, image: "b.jpg", quantity: 3 },
   ];
 
-  it("1st updates the quantity of an item already in the cart", () => {
+  it("updates the quantity of an item already in the cart", () => {
     const product = { id: 1, title: "Backpack", price: 109.95, image: "a.jpg" };
 
     const result = setQuantity(cart, product, 5);
@@ -17,7 +16,7 @@ describe("setQuantity", () => {
     expect(result.find((item) => item.id === 2).quantity).toBe(3);
   });
 
-  it("2nd adds a new entry when the product is not in the cart", () => {
+  it("adds a new entry when the product is not in the cart", () => {
     const product = { id: 3, title: "Ring", price: 695, image: "c.jpg" };
 
     const result = setQuantity(cart, product, 1);
@@ -29,7 +28,7 @@ describe("setQuantity", () => {
     });
   });
 
-  it("3rd remove the entry when quantity is set to 0", () => {
+  it("remove the entry when quantity is set to 0", () => {
     const product = { id: 1, title: "Backpack", price: 109.95, image: "a.jpg" };
 
     const result = setQuantity(cart, product, 0);
@@ -38,7 +37,7 @@ describe("setQuantity", () => {
     expect(result.find((item) => item.id === 1)).toEqual(undefined);
   });
 
-  it("4th does not mutate the original cart", () => {
+  it("does not mutate the original cart", () => {
     const product = { id: 1, title: "Backpack", price: 109.95, image: "a.jpg" };
     const copy = structuredClone(cart);
 

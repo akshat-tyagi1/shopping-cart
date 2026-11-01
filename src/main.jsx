@@ -6,7 +6,7 @@ import routes from "./routes";
 import "./index.css";
 
 const router = createBrowserRouter(routes, {
-  basename: "/shopping-cart",
+  basename: "/",
 });
 
 createRoot(document.getElementById("root")).render(

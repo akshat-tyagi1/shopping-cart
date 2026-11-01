@@ -12,8 +12,14 @@ function Cart() {
     return (
       <div className={styles.page}>
         <h1>Your Cart</h1>
-        <p>Your cart is empty.</p>
-        <Link to="/shop">Browse the shop</Link>
+
+        <div className={styles.layout}>
+          <div>
+            <p>Your cart is empty.</p>
+            <Link to="/shop">Browse the shop</Link>
+          </div>
+          <div />
+        </div>
       </div>
     );
   }
@@ -26,6 +32,7 @@ function Cart() {
   return (
     <div className={styles.page}>
       <h1>Your Cart</h1>
+
       <div className={styles.layout}>
         <ul className={styles.items}>
           {cart.map((item) => (
@@ -36,6 +43,7 @@ function Cart() {
             />
           ))}
         </ul>
+
         <PriceSummary subtotal={subtotal} deliveryCharge={DELIVERY_CHARGE} />
       </div>
     </div>

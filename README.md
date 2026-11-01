@@ -1,16 +1,82 @@
-# React + Vite
+# Spectra — Eyewear Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimalist e-commerce storefront for eyewear, built with React. Spectra focuses on clean typography, a restrained visual identity, and a simple shopping experience.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- React
+- React Router
+- JavaScript
+- CSS Modules
+- Vite
+- Vitest
+- React Testing Library
 
-## React Compiler
+## Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- Responsive homepage and navigation
+- Multi-page routing with React Router
+- Product data fetching through the Fake Store API
+- Reusable cart quantity management logic
+- Unit tests for cart helper functions and components
 
-## Expanding the ESLint configuration
+## Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Clone the repository:
+
+```bash
+git clone https://github.com/akshat-tyagi1/shopping-cart.git
+```
+
+Navigate into the project:
+
+```bash
+cd shopping-cart
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
+
+```bash
+npm run dev
+```
+
+## Running Tests
+
+```bash
+npm test
+```
+
+## Project Structure
+
+```text
+src/
+├── components/
+│   ├── Navbar.jsx
+│   └── Footer.jsx
+├── pages/
+│   ├── Home.jsx
+│   ├── Shop.jsx
+│   ├── Cart.jsx
+│   └── ErrorPage.jsx
+├── hooks/
+│   └── useProducts.js
+├── helperFunctions/
+│   └── setQuantity.js
+├── App.jsx
+├── routes.jsx
+└── main.jsx
+```
+
+## Purpose
+
+Built as part of The Odin Project's React curriculum to practise component-based development, routing, state management, API integration, and testing.
+
+---
+
+**Spectra** — Frames for a more considered view.

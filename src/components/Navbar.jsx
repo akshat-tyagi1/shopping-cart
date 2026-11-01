@@ -6,9 +6,9 @@ const getLinkClass = ({ isActive }) =>
 
 function Navbar({ itemCount }) {
   return (
-    <nav className={styles.navbar}>
+    <nav className={styles.navbar} aria-label="Main navigation">
       <Link to="/" className={styles.brand}>
-        Spectra
+        SPECTRA
       </Link>
       <div className={styles.navLinks}>
         <NavLink to="/" className={getLinkClass} end>
@@ -18,7 +18,7 @@ function Navbar({ itemCount }) {
           Shop
         </NavLink>
         <NavLink to="/cart" className={getLinkClass}>
-          Cart ({itemCount})
+          Cart (<span className={styles.cartCount} key={itemCount} aria-live="polite">{itemCount}</span>)
         </NavLink>
       </div>
     </nav>

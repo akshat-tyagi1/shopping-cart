@@ -1,0 +1,32 @@
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 42px;
+  margin-top: auto;
+  padding: 0.1rem;
+  border: 1px solid var(--border);
+  background: transparent;
+}
+.stepper button {
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 150ms ease;
+}
+.stepper button:hover {
+  background: var(--surface-muted);
+}
+.stepper span {
+  min-width: 2.5ch;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 500;
+}

@@ -1,11 +1,18 @@
 import { useEffect, useState } from "react";
+import catalogue from "../data/catalogue";
 
-function useProducts() {
+function useProducts(source = "api") {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    if (source === "catalogue") {
+      setProducts(catalogue);
+      setLoading(false);
+      return undefined;
+    }
+
     const fetchProducts = async () => {
       try {
         const response = await fetch("https://fakestoreapi.com/products");
@@ -32,7 +39,7 @@ function useProducts() {
     };
 
     fetchProducts();
-  }, []);
+  }, [source]);
 
   return { products, error, loading };
 }

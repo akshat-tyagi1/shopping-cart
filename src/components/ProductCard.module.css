@@ -1,0 +1,99 @@
+.card {
+  display: flex;
+  min-width: 0;
+  height: 100%;
+  flex-direction: column;
+  background: var(--bg);
+}
+.imageWrap {
+  position: relative;
+  display: grid;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  place-items: center;
+  background: var(--surface-muted);
+}
+.imageWrap img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: saturate(0.76);
+  transition:
+    transform 450ms cubic-bezier(0.2, 0.65, 0.3, 1),
+    filter 450ms ease;
+}
+@media (hover: hover) {
+  .card:hover .imageWrap img {
+    transform: scale(1.025);
+    filter: saturate(0.9);
+  }
+}
+.imageWrap span {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.4rem;
+  background: rgba(242, 240, 234, 0.9);
+  color: var(--text);
+  font-size: 0.63rem;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+}
+.meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 1rem 0 1.25rem;
+}
+.meta p {
+  margin: 0;
+}
+.meta div p:first-child {
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+.meta div p + p {
+  margin-top: 0.2rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+}
+.meta > p {
+  padding-top: 0.05rem;
+  font-size: 0.82rem;
+  white-space: nowrap;
+}
+.card > button {
+  width: 100%;
+  min-height: 40px;
+  margin-top: auto;
+  padding: 0.75rem 0.8rem;
+  border: 1px solid var(--text);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition:
+    background-color 150ms ease,
+    color 150ms ease;
+}
+.card > button:hover {
+  background: var(--text);
+  color: var(--bg);
+}
+.card > .added,
+.card > .added:hover {
+  border-color: var(--text);
+  background: var(--text);
+  color: var(--bg);
+  cursor: default;
+}
+@media (max-width: 600px) {
+  .imageWrap {
+    aspect-ratio: 1 / 1;
+  }
+}

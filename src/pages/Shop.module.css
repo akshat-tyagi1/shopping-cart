@@ -1,0 +1,98 @@
+.page {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.intro {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(16rem, 5fr);
+  align-items: end;
+  column-gap: clamp(1.5rem, 3vw, 3rem);
+  padding: 1.5rem 1.5rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.headingBlock {
+  min-width: 0;
+}
+.kicker {
+  margin: 0 0 1rem;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.intro h1 {
+  margin: 0;
+  font-size: clamp(3rem, 6.8vw, 6.2rem);
+  font-weight: 300;
+  letter-spacing: -0.085em;
+  line-height: 0.86;
+}
+
+.categories {
+  display: flex;
+  gap: 1.5rem;
+  padding: 0.9rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+.categories button {
+  min-height: 40px;
+  padding: 0.15rem 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 0.76rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition:
+    color 150ms ease,
+    border-color 150ms ease;
+}
+.categories button:hover,
+.categories .selected {
+  border-color: var(--text);
+  color: var(--text);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  align-items: stretch;
+  gap: clamp(1.5rem, 2vw, 2rem);
+  margin: 0;
+  padding: 1.25rem 1.5rem 1.5rem;
+  list-style: none;
+}
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .intro {
+    grid-template-columns: minmax(0, 1.5fr) minmax(12rem, 0.8fr);
+    column-gap: 1.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .intro {
+    grid-template-columns: 1fr;
+    align-items: start;
+    row-gap: 1.25rem;
+    padding: 1.5rem 1rem 1.25rem;
+  }
+  .intro h1 {
+    font-size: clamp(3.15rem, 16vw, 5rem);
+  }
+  .description {
+    max-width: 34ch;
+    margin: 0;
+  }
+  .categories {
+    gap: 1rem;
+    padding-inline: 1rem;
+    overflow-x: auto;
+  }
+  .grid {
+    grid-template-columns: 1fr;
+    padding: 1rem;
+  }
+}

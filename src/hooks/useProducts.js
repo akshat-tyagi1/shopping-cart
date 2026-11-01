@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import setQuantity from "../helperFunctions/setQuantity";
 
 function useProducts() {
   const [products, setProducts] = useState([]);
